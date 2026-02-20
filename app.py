@@ -223,7 +223,7 @@ with col_title:
 st.markdown("""
 <div class="story-box">
 <b>The Premise:</b> In Formula 1, speed is everything. But does having the fastest car guarantee a World Championship?
-We analysed 75 years of race data to find the truth. Roughly <b>1 in 5 times</b>, the fastest driver on the grid <i>loses</i> the championship.
+I analysed 75 years of race data to find the truth. Roughly <b>1 in 5 times</b>, the fastest driver on the grid <i>loses</i> the championship.
 Let's break down the system.
 </div>""", unsafe_allow_html=True)
 
@@ -430,7 +430,7 @@ st.markdown("""
     Speed wins races. Reliability protects championships. Consistency secures legacies.
   </p>
   <div style="text-align:left;max-width:780px;margin:0 auto;color:#ddd;font-size:1rem;line-height:1.9;">
-    <p>Our analysis of 75 years of Formula 1 data reveals three critical truths:</p>
+    <p>My analysis of 75 years of Formula 1 data reveals three critical truths:</p>
     <ul style="list-style:none;padding:0;">
       <li style="margin-bottom:18px;">🏎️ <b>The 80% Rule:</b> The fastest car wins the title ~80% of the time. The other 20% is where history is written.</li>
       <li style="margin-bottom:18px;">🏎️ <b>The "Aha" Moment:</b> The defining shift was not speed — it was <span style="color:#E10600;font-weight:700;">reliability</span>. The DNF collapse post-2000 turned F1 from a survival lottery into an engineering dynasty.</li>
