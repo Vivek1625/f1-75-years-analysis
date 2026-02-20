@@ -1,6 +1,6 @@
-# ==============================================================
-# F1 ELITE DATA STORY ENGINE — OPTIMIZED v2
-# ==============================================================
+
+# F1 DATA STORY
+
 
 import streamlit as st
 import pandas as pd
@@ -11,7 +11,6 @@ import base64, os
 
 st.set_page_config(layout="wide", page_title="F1 Elite Analytics", page_icon="🏎️")
 
-# ─── DARK THEME POP-UP ────────────────────────────────────────
 @st.dialog("🏎️ Before You Start...")
 def theme_popup():
     st.markdown("""
@@ -37,9 +36,6 @@ def theme_popup():
 
 if "theme_popup_shown" not in st.session_state:
     theme_popup()
-# ──────────────────────────────────────────────────────────────
-
-# ─── CONSTANTS ────────────────────────────────────────────────
 F1_COLORS = {
     'Ferrari': '#DC0000', 'Mercedes': '#00D2BE', 'Red Bull': '#0600EF',
     'McLaren': '#FF8700', 'Williams': '#005AFF', 'Aston Martin': '#006F62',
@@ -71,7 +67,6 @@ CHART_BASE = dict(
 )
 GRID = dict(gridcolor="rgba(255,255,255,0.08)")
 
-# ─── CSS / BACKGROUND ────────────────────────────────────────
 def set_bg(path: str):
     if not os.path.exists(path):
         return
@@ -103,7 +98,7 @@ def set_bg(path: str):
 
 set_bg("assets/background_2.jpeg")
 
-# ─── DATA LOADING ─────────────────────────────────────────────
+# ─── DATA ----------
 @st.cache_data(show_spinner="Loading race data…")
 def load_data():
     base = "data/"
@@ -117,7 +112,6 @@ def load_data():
 
 results, races, drivers, standings, constructors = load_data()
 
-# ─── DATA PREP (ALL CACHED) ───────────────────────────────────
 @st.cache_data(show_spinner="Crunching 75 years of data…")
 def prepare_data(results, races, drivers, standings, constructors):
     drivers = drivers.copy()
@@ -191,7 +185,6 @@ def prepare_data(results, races, drivers, standings, constructors):
 (driver_map, comparison, dnf_year, const_wins,
  c_col, tsi, final_points, champions) = prepare_data(results, races, drivers, standings, constructors)
 
-# ─── HELPERS ─────────────────────────────────────────────────
 def apply_chart_style(fig, **extra):
     fig.update_layout(**{**CHART_BASE, **extra})
     fig.update_xaxes(**GRID)
